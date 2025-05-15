@@ -1,4 +1,23 @@
 .card{
   height: 100%;
 }
-
+a{
+  text-decoration: none;
+  color: black;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+li{
+  margin-right: 30px;
+  font-size: 25px;
+  font-weight: 400;
+}
+a:hover{
+  font-weight: 700;
+}
+a.active{
+  font-weight: 700;
+}

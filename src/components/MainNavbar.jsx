@@ -6,13 +6,13 @@ function MainNavbar() {
         <nav>
           <ul>
               <li>
-                <NavLink to="/">HomePage</NavLink>
+                <NavLink to="/"><a href="">HomePage</a></NavLink>
               </li>
               <li>
-                <NavLink to="/who">Who we are</NavLink>
+                <NavLink to="/who"><a  className="" href="">Who we are</a></NavLink>
               </li>
               <li>
-                <NavLink to="/products">Products</NavLink>
+                <NavLink to="/products"><a href="">Products</a></NavLink>
               </li>
           </ul>
         </nav>
