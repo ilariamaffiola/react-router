@@ -6,14 +6,18 @@ a{
   color: black;
 }
 ul{
+  margin-top: 5px;
+  margin-left: 5px;;
   list-style: none;
   padding: 0;
   display: flex;
 }
 li{
   margin-right: 30px;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 400;
+  border: 1px solid black;
+  padding: 4px;
 }
 a:hover{
   font-weight: 700;
