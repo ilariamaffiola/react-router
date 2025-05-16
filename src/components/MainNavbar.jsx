@@ -1,19 +1,32 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 function MainNavbar() {
+
+  const links = [
+    { path: '/',
+      label: 'HomePage'
+    },
+    {
+      path: '/who',
+      label: 'Who we are'
+    },
+    {
+      path: '/products',
+      label: 'Products'
+    }
+    ]
   return (
     <header>
         <nav>
           <ul>
-              <li>
-                <NavLink to="/"><a href="">HomePage</a></NavLink>
-              </li>
-              <li>
-                <NavLink to="/who"><a  className="" href="">Who we are</a></NavLink>
-              </li>
-              <li>
-                <NavLink to="/products"><a href="">Products</a></NavLink>
-              </li>
+              {links.map((link, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={link.path}
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </nav>
     </header>
