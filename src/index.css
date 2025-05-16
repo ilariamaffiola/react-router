@@ -14,9 +14,8 @@ ul{
 }
 li{
   margin-right: 30px;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 400;
-  border: 1px solid black;
   padding: 4px;
 }
 a:hover{
