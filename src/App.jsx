@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage'
 import Who from './pages/Who'
 import Products from './pages/products/Products'
 import DefaultLayout from './layouts/DefaultLayout'
-import DetailProducts from './pages/products/DetailProducts'
+import DetailProduct from './pages/products/DetailProduct'
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
             <Route path='/who' Component={Who} />
             <Route path='/products'>
               <Route index Component={Products}/>
-              <Route path=':id' Component={DetailProducts}/>
+              <Route path=':id' Component={DetailProduct}/>
             </Route>
           </Route>
         </Routes>

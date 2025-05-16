@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Products() {
 const [products, setProducts] = useState(null);
@@ -21,22 +21,24 @@ useEffect(() => {
       <div className="row g-4">
         {products === null ? (
           <div className="col-12 text-center">
-          <span class="loader"></span>
+          <span className="loader"></span>
           </div>
         ) : (
           <div className="row g-4">
           {products.map((product) => (
             <div className="col-4">
-              <div className="card" key={product.id}>
-                <div className="card-img">
-                  <img className='img-fluid' src={product.image} alt={product.title} />
+              <NavLink to={`/products/${product.id}`}>
+                <div className="card" key={product.id}>
+                  <div className="card-img">
+                    <img className='img-fluid' src={product.image} alt={product.title} />
+                  </div>
+                  <div className="card-body">
+                    <h6 className="card-title">{product.title}</h6>
+                    <p className="card-text">{product.category}</p>
+                    <p className="card-text">${product.price}</p>
+                  </div>
                 </div>
-                <div className="card-body">
-                  <h6 className="card-title">{product.title}</h6>
-                  <p className="card-text">{product.category}</p>
-                  <p className="card-text">${product.price}</p>
-                </div>
-              </div>
+              </NavLink>
             </div>
           ))}
         </div>
