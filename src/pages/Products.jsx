@@ -20,7 +20,9 @@ useEffect(() => {
     <div className='container'>
       <div className="row g-4">
         {products === null ? (
-          <div>Loading...</div>
+          <div className="col-12 text-center">
+          <span class="loader"></span>
+          </div>
         ) : (
           <div className="row g-4">
           {products.map((product) => (
