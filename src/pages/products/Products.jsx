@@ -19,7 +19,7 @@ useEffect(() => {
     <h1>Products List</h1>
     <div className='container'>
       <div className="row g-4">
-        {products === null ? (
+        {products == null ? (
           <div className="col-12 text-center">
           <span className="loader"></span>
           </div>
