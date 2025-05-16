@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 const DetailProduct = () => {
-    const { id } = useParams();
+    const params = useParams();
+    const id = parseInt(params.id);
     const [product, setProduct] = useState(null);
     const getProduct = () => {
         axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
@@ -14,6 +15,9 @@ const DetailProduct = () => {
     useEffect(() => {
         getProduct();
     }, [])
+    useEffect(() => {
+        getProduct();
+    }, [id])
     const navigate = useNavigate();
   return (
     <div>
@@ -41,12 +45,19 @@ const DetailProduct = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>    
+                <div>
                 <button className='btn btn-primary mt-3' onClick={() => {
-                    navigate(-1);
-                }} >
+                    navigate(`/products/${id - 1}`);
+                }}
+                    disabled={id === 1 ? true : false}>
                     Torna indietro
                     </button>
+                    <button className='btn btn-primary ms-3 mt-3' onClick={() => {
+                    navigate(`/products/${id + 1}`);
+                }}
+                disabled={id === 20 ? true : false}>Vai Avanti</button>
+                </div>
             </div>
         
         )
