@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Who from './pages/Who'
 import Products from './pages/Products'
+import DefaultLayout from './layouts/DefaultLayout'
 
 function App() {
 
@@ -10,9 +11,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' Component={Homepage}></Route>
-          <Route path='/who' Component={Who}></Route>
-          <Route path='/products' Component={Products}></Route>
+          <Route Component={DefaultLayout}> 
+            <Route path='/' Component={Homepage} />
+            <Route path='/who' Component={Who} />
+            <Route path='/products'>
+              <Route index Component={Products}/>
+            </Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

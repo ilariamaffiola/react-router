@@ -1,5 +1,4 @@
 import React from 'react'
-import MainNavbar from '../components/MainNavbar'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 function Products() {
@@ -15,7 +14,6 @@ useEffect(() => {
 },[]);
   return (
     <>
-    <MainNavbar />
     <h1>Products List</h1>
     <div className='container'>
       <div className="row g-4">
