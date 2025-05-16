@@ -17,23 +17,34 @@ const DetailProduct = () => {
   return (
     <div>
         <h1 className='text-center mb-3'>Dettaglio prodotto</h1>
-        <div className="container">
+        {product === null ? (
             <div className="row">
                 <div className="col-12">
-                    <div className="card">
-                        <div className="card-img">
-                            <img className='img-fluid' src={product.image} alt={product.title} />
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">{product.title}</h5>
-                            <p className="card-text">{product.category}</p>
-                            <p className="card-text">€{product.price}</p>
-                            <p className="card-text">{product.description}</p>
+                    <span className="loader"></span>
+                </div>
+            </div>
+        ):
+        (
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="card">
+                            <div className="card-img">
+                                <img className='img-fluid' src={product.image} alt={product.title} />
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">{product.title}</h5>
+                                <p className="card-text">{product.category}</p>
+                                <p className="card-text">€{product.price}</p>
+                                <p className="card-text">{product.description}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
+        )
+        }
     </div>
   )
 }
